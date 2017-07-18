@@ -1,0 +1,158 @@
+label{
+             display: inline-block;/*将行内元素转成行内块状元素  */
+             margin-right: 5px;
+             width: 100px;
+      }
+      input[type="text"],input[type="password"]{
+          padding-left:20px;
+          height:40px;
+          width:200px;
+          margin:5px;
+          border:none;/*去掉输入框默认的边框 */
+          border-bottom: 2px dashed orange
+      }
+      input[type="text"]:focus,input[type="password"]:focus{
+         border-bottom: 2px dashed orange;
+         outline:none; /*去掉输入框默认的轮廓 */
+         box-shadow:-10px -5px 30px rgba(0,0,0,0.4);
+         /*边框阴影 ：x偏移量  y偏移量  模糊值  阴影颜色 */
+      }
+      
+      
+      
+      /* 待修改 */
+*{
+	margin:0;
+	padding:0;
+	//background-color:#F7F7F7;
+}
+/* 标题头 */
+.header{
+	height: 35px;
+	background-color:#2AAD6F;
+	overflow:hidden;
+	line-height:35px;
+}
+
+.header .nav{
+	float:left;
+	margin-left:300px;
+	list-style:none;
+	width:414px;
+	//background-color:#2AAD6F;
+}
+
+.header .nav li{
+	width:22%;
+	float:left;
+	border-left:1px solid #47B488;
+	text-align:center;
+	//background-color:#2AAD6F;
+}
+
+
+.header .nav li:hover{
+	background-color:#47B488;
+}
+
+.header .nav li a{
+	text-decoration:none;
+	color:white;
+	font-size:16px;
+	//background-color:#2AAD6F;
+	font-weight:bold;
+}
+
+
+.content{
+  //  background-color:#F7F7F7;
+    text-align: center;
+    width: 600px;
+    margin: 100px auto;
+}
+.content .header2 .oppo{
+	color:#009B72;
+	font-size:70px;
+	font-weight:bold;
+	margin-left:20px;
+	
+}
+.content .header2 .text{
+	color:#363636;
+	font-size:15px;
+	margin-left:20px;
+}
+.content .form input{
+	border:1px solid #E2E2E2;
+	width:320px;
+	height:45px;
+	
+	
+	
+}
+.content .form input .login{
+	font-size:20px;
+}
+.content .form input .register{
+	font-size:20px;
+}
+.content .form  a{
+	color:#00925F;
+	font-size:13px;	
+	
+    
+}
+.content .form .userdo{
+	    position: relative;
+        margin-top: 10px;
+}
+.content .form .button 
+{
+    text-align: center;
+    font-size: 16px;
+     position: relative;
+     margin-top: 10px;
+  }
+  
+  .content .form .super{
+    height: 15px;
+    line-height: 15px;
+    margin-top: 10px;
+    margin-left:270px;
+  }
+.login{
+	
+	background: #009B72;
+    width: 320px;
+    height:45px;
+    border: none;
+	
+}
+.register{
+	
+	background: white;
+    width: 320px;
+    height:45px;
+    border: none;
+	
+}
+.content .bottom
+{
+	color:#A6A9A8;
+	
+   
+}
+.content .bottom .tubiao{
+	width: 318px;
+    height: 23px;
+    margin: 0 auto;
+}
+ .content .footer_info{
+    color: #7b7b7b;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 30px;
+    padding: 24px 0;
+    position: relative
+ }   
+ 

@@ -1,0 +1,45 @@
+*{
+	margin:0;
+	padding:0;
+}
+.goods_list{
+	list-style:none;
+	border:1px solid;
+}
+.goods_list li{
+	float:left;
+	position:relative;
+	margin:10px;
+	border:1px solid #ccc;
+	overflow:hidden;
+}
+.goods_list li span{
+	font-size:20px;
+	color:orange;
+}
+.goods_list li .mask{
+	position:absolute;
+	bottom:-100px;
+	background:rgba(0,0,0,0.5);
+	height:100px;
+	width:100%;
+	transition:all 1s;
+}
+.goods_list li img{
+	width:220px;
+	height:240px;
+}
+.goods_list li form{
+	position:relative;
+	top:0;
+	left:0;
+}
+.goods_list li:hover .mask{
+	top:0;
+	transform:rotateZ(360deg);
+}
+.goods_list li a{
+	
+	text-decoration:none;
+	color:green;
+}

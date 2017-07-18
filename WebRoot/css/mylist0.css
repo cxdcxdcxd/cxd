@@ -1,0 +1,294 @@
+*{
+	margin:0;
+	padding:0;
+}
+/* 标题头 */
+.header{
+	height: 31px;
+	background-color:#009B72;
+	overflow:hidden;
+	line-height:31px;
+}
+.header2{
+	height: 80px;
+	background-color:white;
+	overflow:hidden;
+	line-height:80px;
+	position: relative;
+}
+.header .nav{
+	
+	margin-left:50px;
+	list-style:none;
+	width:414px;
+	margin-left:1050px;
+	
+}
+.header2 .nav{
+	
+	margin-left:750px;
+	list-style:none;
+	width:819px;
+	
+}
+.header .nav li{
+	width:16%;
+	float:left;
+	border-left:1px solid #47B488;
+	text-align:center;
+	
+}
+
+.header2 .nav li{
+	width:10%;
+	float:left;
+	
+	text-align:center;
+	
+}
+.header .nav li:hover{
+	background-color:#47B488;
+}
+.header2 .nav li:hover{
+	   text-color:yellow;
+}
+.header .nav li a{
+	text-decoration:none;
+	color:white;
+	font-size:14px;
+	
+}
+.header2 .nav li a{
+	text-decoration:none;
+	color:#393939;
+	font-size:14px;
+	
+}
+.header2 span{
+	color:#118D5C;
+	font-size:40px;	
+	margin-left:205px;
+	float:left;
+	font-weight:bold;
+	
+}
+.header2 span a{
+	text-decoration:none;
+	color:#118D5C;
+	}
+.header2 .nav .product{
+	text-decoration:underline;
+	line-color:#393939;
+}
+/*第二部分  */
+.show{
+	background-color:#F7F7F7;
+	overflow:hidden;
+	
+}
+.show .list{
+
+	list-style:none;
+	border:1px solid;
+	width:1200px;
+	overflow:hidden;
+	margin:0 auto;
+	text-align:center;
+	
+}
+.show .list li{
+	
+	float:left; 
+	position:relative;
+    overflow:hidden;
+	border:1px solid black;
+	margin:35px;
+	
+
+}
+.show .list li a{
+	
+	font-size:15px;
+	text-decoration:none;
+	
+}
+.show .list li .mask span{
+ 	font-size:20px;
+	color:white;
+	text-align:center; 
+	
+}
+.show .list li .mask{
+	position:absolute;
+	bottom:-110px;
+	background:rgba(0,0,0,0.2);
+	height:60px;
+	width:100%;
+	transition:all 1s; 
+	text-align:center;
+
+}
+
+.show .list li:hover .mask{
+    position:absolute;
+	bottom:0px;
+	background:rgba(0,0,0,0.3);
+	transition:all 1s;	
+
+}
+.show .list li img{
+	width:220px;
+	height:240px;
+	
+}
+
+/* 底部通用部分 */
+/* 底部链接部分 */
+.bottom{
+position:relative;
+margin-top:40px;
+}
+.bottom .commend{
+    margin-left:200px;
+	position:absolute;
+    width:80px;
+}
+.bottom .service{
+    margin-left:400px;
+	position:absolute;
+     width:110px;
+}
+.bottom .concerning{
+    margin-left:650px;
+	position:absolute;
+     width:80px;
+}
+.bottom .business{
+    margin-left:850px;
+	position:absolute;
+     width:80px;
+}
+.bottom .commend li{
+		list-style:none;
+}
+.bottom .commend li a{
+	text-decoration:none;
+	color:#363636;
+	font-size:15px;
+}
+.bottom .commend span{
+	font-size:16px;
+	color:#363636;
+	font-weight:bold;
+}
+.bottom .service li{
+		list-style:none;
+}
+.bottom .service li a{
+	text-decoration:none;
+	color:#363636;
+	font-size:15px;
+}
+.bottom .service span{
+	font-size:16px;
+	color:#363636;
+	font-weight:bold;
+}
+.bottom .concerning li{
+		list-style:none;
+}
+.bottom .concerning li a{
+	text-decoration:none;
+	color:#363636;
+	font-size:15px;
+}
+.bottom .concerning span{
+	font-size:16px;
+	color:#363636;
+	font-weight:bold;
+}
+.bottom .business li{
+		list-style:none;
+}
+.bottom .business li a{
+	text-decoration:none;
+	color:#363636;
+	font-size:15px;
+}
+.bottom .business span{
+	font-size:16px;
+	color:#363636;
+	font-weight:bold;
+}
+.bottom .online{
+	
+	position:absolute;
+	left:1200px;
+	
+	text-align:center;
+}
+
+.bottom .online .first{
+	font-size:25px;
+	color:#393939;
+	font-weight:bold;
+	
+}
+.bottom .online .second{
+	font-size:15px;
+	color:#393939;
+	
+}
+/* 网关部分 */
+.about{
+	/* bottom:10px; */
+	/* text-align:center; */
+	 position:relative;
+      margin-top:560px;
+	
+}
+.about span{
+    font-size:16px;
+	color:#363636;
+	font-weight:bold;
+	
+}
+.about .copy{
+	color:#7B7B7B;
+	font-size:10px;
+	margin-left:205px;
+	 position:absolute; 
+}
+.about .copy span{
+	color:#7B7B7B;
+	font-size:15px;
+	margin-left:470px;
+	
+	
+}
+.about .copy .image{
+	list-style:none;
+	position:relative;
+	
+}
+.about .copy .image li{
+	width:50px;
+	
+}
+.about .copy .image .weibo{
+	
+   position:relative;
+	margin-left:1000px;
+	margin-top:-35px;
+}
+.about .copy .image .weixin{
+	
+	 position:relative;
+	margin-left:1050px;
+	margin-top:-45px;
+}
+.about .copy .image .zhi{
+	 position:relative;
+	margin-left:1100px;
+	margin-top:-48px;
+}
