@@ -48,11 +48,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
        </ul>    
     </div>
   
-  
+  <c:if test="${empty pageresult.pageData}">
+                  未搜索到符合要求的产品
+     </c:if>
   <!-- div显示问题 -->
+  <c:if test="${not empty pageresult}">
   <div class="show">
     <ul class="list">
-       <c:forEach var="oppo" items="${oppoList}">
+       <c:forEach var="oppo" items="${pageresult.pageData}">
       <li>
           <c:if test="${not empty sessionScope.user}">
           <a href="CartServlet?oppoid=${oppo.oppoid}&flag=addcart"><img src="images/cart.png" style="width: 30px;height: 30px;">加入购物车</a> <br>
@@ -73,8 +76,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       </li>                  
        </c:forEach>
   </ul>  
+    当前${pageresult.currentPage }/${pageresult.totalPage }页     &nbsp;&nbsp;
+    <a style="text-decoration: none;color:green" href="OppoServlet?flag=getOppoBycId&cid=${cid }&currentPage=1">首页</a>
+    <c:if test="${pageresult.currentPage!=1}">
+	<a style="text-decoration: none;color:green" href="OppoServlet?flag=getOppoBycId&cid=${cid }&currentPage=${pageresult.currentPage-1}">上一页</a>
+	</c:if> 
+    <c:if test="${pageresult.currentPage==1}">
+	<a style="text-decoration: none;color:green" href="OppoServlet?flag=getOppoBycId&cid=${cid }&currentPage=${pageresult.currentPage}">上一页</a>
+	</c:if> 
+	 <c:if test="${pageresult.currentPage==pageresult.totalPage}">
+	 	<a style="text-decoration: none;color:green" href="OppoServlet?flag=getOppoBycId&cid=${cid }&currentPage=${pageresult.currentPage}">下一页</a>
+	 </c:if>
+	  <c:if test="${pageresult.currentPage!=pageresult.totalPage}">
+	  	<a style="text-decoration: none;color:green" href="OppoServlet?flag=getOppoBycId&cid=${cid }&currentPage=${pageresult.currentPage+1}">下一页</a>
+	 </c:if>
+	<a style="text-decoration: none;color:green" href="OppoServlet?flag=getOppoBycId&cid=${cid }&currentPage=${pageresult.totalPage}">末页</a>
   </div>
-  
+  </c:if>
   <div class="bottom">
     <div class="commend">
     

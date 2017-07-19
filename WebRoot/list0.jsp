@@ -49,33 +49,44 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </div>
   
   
-  <c:if test="${empty list}">
- 未找到相关产品
-  </c:if>
-   <c:if test="${not empty list}">
-     <div class="show">
+  
+   <c:if test="${empty pageresult.pageData}">
+                  未搜索到符合要求的产品
+     </c:if>
+  <!-- div显示问题 -->
+  <c:if test="${not empty pageresult}">
+  <div class="show">
     <ul class="list">
-       <c:forEach var="oppo" items="${list}">
+       <c:forEach var="oppo" items="${pageresult.pageData}">
       <li>
-
-        <a href="CartServlet?oppoid=${oppo.oppoid}&flag=addcart"><img src="images/cart.png" style="width: 30px;height: 30px;">加入购物车</a> <br>
+          <a href="CartServlet?oppoid=${oppo.oppoid}&flag=addcart"><img src="images/cart.png" style="width: 30px;height: 30px;">加入购物车</a> <br>
          <div class="mask">
          <span>${oppo.opponame}
                 <br>
                                   ￥${oppo.price }
          </span> 
          </div>
-      
          <img src="images/${oppo.picture }" >
-           
-         
       </li>                  
        </c:forEach>
-  </ul> 
-   
+  </ul>  
+    当前${pageresult.currentPage }/${pageresult.totalPage }页     &nbsp;&nbsp;
+    <a  style="text-decoration: none;color:green" href="OppoServlet?flag=search&seach_key=${seach_key}&currentPage=1">首页</a>
+    <c:if test="${pageresult.currentPage!=1}">
+	<a style="text-decoration: none;color:green" href="OppoServlet?flag=search&seach_key=${seach_key}&currentPage=${pageresult.currentPage-1}">上一页</a>
+	</c:if> 
+    <c:if test="${pageresult.currentPage==1}">
+	<a style="text-decoration: none;color:green" href="OppoServlet?flag=search&seach_key=${seach_key}&currentPage=${pageresult.currentPage}">上一页</a>
+	</c:if> 
+	 <c:if test="${pageresult.currentPage==pageresult.totalPage}">
+	 	<a style="text-decoration: none;color:green" href="OppoServlet?flag=search&seach_key=${seach_key}&currentPage=${pageresult.currentPage}">下一页</a>
+	 </c:if>
+	  <c:if test="${pageresult.currentPage!=pageresult.totalPage}">
+	  	<a style="text-decoration: none;color:green" href="OppoServlet?flag=search&seach_key=${seach_key}&currentPage=${pageresult.currentPage+1}">下一页</a>
+	 </c:if>
+	<a style="text-decoration: none;color:green" href="OppoServlet?flag=search&seach_key=${seach_key}&currentPage=${pageresult.totalPage}">末页</a>
   </div>
   </c:if>
-  
   
     <div class="bottom">
     <div class="commend">

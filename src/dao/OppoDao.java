@@ -7,9 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 import model.Oppo;
 import util.DBUtil;
+import util.Page;
 
 public class OppoDao {
-	public List<Oppo> getOppoByStr(String str) {
+	public void getOppoByStr(String str, Page<Oppo> page) {
 		// TODO Auto-generated method stub
 			List<Oppo> list=new ArrayList<Oppo>();
 			 Oppo oppo=null;
@@ -18,9 +19,18 @@ public class OppoDao {
 			 ResultSet rs=null;
 			 try{
 				con=DBUtil.getCon();
-				String sql="select * from oppo where opponame like ?";
+				String count="select count(*) from oppo where opponame like ?";
+				pst=con.prepareStatement(count);
+				pst.setString(1,"%"+str+"%");
+				rs=pst.executeQuery();
+				if(rs.next()){
+				page.setTotalCount(rs.getInt(1));
+				}
+				String sql="select * from oppo where opponame like ? limit ?,?";
 				pst=con.prepareStatement(sql);
 				pst.setString(1,"%"+str+"%");
+				pst.setInt(2,(page.getCurrentPage()-1)*page.getPageCount());
+				pst.setInt(3,page.getPageCount());
 				rs=pst.executeQuery();
 				while(rs.next()){
 					oppo=new Oppo();
@@ -30,13 +40,14 @@ public class OppoDao {
 					oppo.setPicture(rs.getString("picture"));
 					oppo.setPrice(rs.getFloat("price"));
 					list.add(oppo);
+					page.setPageData(list);
 				}
 			 }catch(Exception e){
 				e.printStackTrace(); 
 			 }finally{
 				 DBUtil.closeAll(con, rs, pst);
 			 }
-			 return list;
+			 
 	}
 
 	public List<Oppo> getAllOppo() {
